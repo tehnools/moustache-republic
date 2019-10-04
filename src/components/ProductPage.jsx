@@ -13,6 +13,13 @@ export default function ProductPage () {
           <div className="price">
             <span>price</span>
           </div>
+          <div className="description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error tempore id, molestias reiciendis enim
+              voluptatem est eaque sunt, perferendis voluptate quis recusandae explicabo,
+              quae saepe sed eum ullam! In, dicta!
+            </p>
+          </div>
         </div>
       </div>
     </Page>

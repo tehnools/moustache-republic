@@ -7,6 +7,25 @@ img{
   max-width: 300px;
 }
 
+button{
+  border: none;
+  background-color: none;
+  background: none;
+}
+
+.btn{
+  font: $font-primary;
+  border: 1.4fr solid  $font-primary;
+  font-weight: 400;
+  .add-cart{
+    padding: 75em 0.5em;
+  }
+
+  .size-btn{
+    padding: 0.5em;
+  }
+}
+
 .page {
   display: flex;
   justify-content: center;
@@ -43,5 +62,19 @@ img{
       font-size: 1.2fr;
       font-weight: 300;
     }
+  }
+
+  .description{
+    padding: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  @media screen and (min-width: $break-small){
+    width: 300px;
+  }
+
+  @media screen and (min-width: $break-large){
+    max-width: 500px;
+    min-width: 360px;
   }
 }
