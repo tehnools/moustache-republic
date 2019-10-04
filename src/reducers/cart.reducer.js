@@ -1,5 +1,4 @@
 import { ADD_CART, REMOVE_CART, UPDATE_CART } from '../actions/cart.actions'
-import _ from 'lodash'
 
 const initialState = [{
   id: 1,

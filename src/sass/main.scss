@@ -105,3 +105,12 @@ button{
   }
 }
 
+
+.error-popup{
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid $req-star;
+  color: $req-star;
+  background: salmon;
+}
+

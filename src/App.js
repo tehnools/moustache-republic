@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import './App.css'
 import NavBar from './components/NavBar'
+import ErrorPopup from './components/ErrorPopup'
 import ProductPage from './components/ProductPage'
 
 const item = {
@@ -12,13 +14,20 @@ const item = {
   price: 10
 }
 
-function App () {
+function App ({ error }) {
   return (
     <div className="App">
       <NavBar />
+      {error && (<ErrorPopup msg={error.msg}/>)}
       <ProductPage item={item}/>
     </div>
   )
 }
 
-export default App
+const mapStateToProps = (state) => {
+  return {
+    error: state.error
+  }
+}
+
+export default connect(mapStateToProps)(App)

@@ -1,17 +1,24 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { addCart } from '../actions/cart.actions'
+import { addCart, addCartError } from '../actions/cart.actions'
 import Page from './Page'
 
 function ProductPage (props) {
-  const [size, setSize] = useState('')
+  const [size, setSize] = useState(null)
+
   const { item: { id, name, description, price } } = props
 
   const handleOnClick = e => {
     setSize(e.target.textContent)
   }
 
-  const onClickHandler = () => props.dispatch(addCart({ id, name, price, quantity: 1, size }))
+  const onClickHandler = () => {
+    if (size) {
+      props.dispatch(addCart({ id, name, price, quantity: 1, size }))
+    } else {
+      props.dispatch(addCartError({ code: 400, msg: 'Size must be selected before adding to cart' }))
+    }
+  }
 
   return (
     <Page>
@@ -30,7 +37,7 @@ function ProductPage (props) {
             </p>
           </div>
           <div className="product-selection">
-            <span>size{size === '' && <span className="req-star">*</span>}</span>
+            <span>size{!size && <span className="req-star">*</span>}</span>
             <button className="btn size-btn" onClick={handleOnClick}>S</button>
             <button className="btn size-btn" onClick={handleOnClick}>M</button>
             <button className="btn size-btn" onClick={handleOnClick}>L</button>
