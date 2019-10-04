@@ -4,7 +4,7 @@ import CartItem from './CartItem'
 
 function CartList ({ cart }) {
   return (
-    <div className="cat-list">
+    <div className="cart-list">
       {cart && cart.map(item => (<CartItem key={item} item={item} />))}
     </div>
   )

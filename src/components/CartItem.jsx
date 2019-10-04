@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { removeCart } from '../actions/cart.actions'
 
-function CartItem ({ name, price, size, quantity }) {
+function CartItem ({ item: { name, price, size, quantity } }) {
   return (
     <div className="cart-item">
       <img src="classic-tee.jpg" alt="classic-tee" />
