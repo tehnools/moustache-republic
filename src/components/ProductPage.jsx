@@ -6,7 +6,7 @@ export default function ProductPage () {
     <Page>
       <div className="container">
         <div className="product-image">
-          <img src="classic-tee.jpg" alt="classic-tee"/>
+          <img src="classic-tee.jpg" alt="classic-tee" />
         </div>
         <div className="product-info">
           <h1>T-shirt</h1>
@@ -20,6 +20,12 @@ export default function ProductPage () {
               quae saepe sed eum ullam! In, dicta!
             </p>
           </div>
+          <div className="product-selection">
+            <button className="btn">S</button>
+            <button className="btn">M</button>
+            <button className="btn">L</button>
+          </div>
+          <button className="btn add-cart">Add To Cart</button>
         </div>
       </div>
     </Page>
