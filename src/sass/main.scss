@@ -1,6 +1,6 @@
 @import "colours";
 
-$break-small: 320px;
+$break-small: 480px;
 $break-large: 1200px;
 
 img{
@@ -35,8 +35,9 @@ button{
   display: flex;
   padding: 1.5em 1.75em;
 
-  @media screen and (min-width: $break-small){
+  @media screen and (max-width: $break-small){
     width: 300px;
+    flex-direction: column;
   }
 
   @media screen and (min-width: $break-large){
