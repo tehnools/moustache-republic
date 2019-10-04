@@ -83,3 +83,14 @@ button{
     min-width: 360px;
   }
 }
+
+.cart-list {
+  @media screen and (min-width: $break-small){
+    width: 300px;
+  }
+
+  @media screen and (min-width: $break-large){
+    max-width: 360px;
+    min-width: 300px;
+  }
+}

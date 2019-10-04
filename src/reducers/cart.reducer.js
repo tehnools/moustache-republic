@@ -11,12 +11,10 @@ const initialState = [{
 
 const findItem = (list, comparedItem) => {
   console.log(list, comparedItem)
-  return list.find(item => {
-    console.log(item.id === comparedItem.id, item.size === comparedItem.size)
+  return list.find((item, index) => {
     if (item.id === comparedItem.id && item.size === comparedItem.size) {
-      return true
+      return index
     }
-    console.log('false?')
     return false
   })
 }
