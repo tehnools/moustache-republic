@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { addCart } from '../actions/cart.actions'
 import Page from './Page'
 
-export default function ProductPage (props) {
+function ProductPage (props) {
   const [size, setSize] = useState('')
   const { item: { name, description, price } } = props
+
   const handleOnClick = e => {
     setSize(e.target.textContent)
   }
+
+  const onClickHandler = () => props.dispatch(addCart(props.item))
 
   return (
     <Page>
@@ -30,9 +35,17 @@ export default function ProductPage (props) {
             <button className="btn" onClick={handleOnClick}>M</button>
             <button className="btn" onClick={handleOnClick}>L</button>
           </div>
-          <button className="btn add-cart">Add To Cart</button>
+          <button className="btn add-cart" onClick={onClickHandler}>Add To Cart</button>
         </div>
       </div>
     </Page>
   )
 }
+
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart
+  }
+}
+
+export default connect(mapStateToProps)(ProductPage)
