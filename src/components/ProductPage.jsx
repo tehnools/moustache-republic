@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Page from './Page'
 
+export default function ProductPage (props) {
   const [size, setSize] = useState('')
   const { item: { name, description, price } } = props
   const handleOnClick = e => {
@@ -14,15 +15,13 @@ import Page from './Page'
           <img src="classic-tee.jpg" alt="classic-tee" />
         </div>
         <div className="product-info">
-          <h1>T-shirt</h1>
+          <h1>{name}</h1>
           <div className="price">
-            <span>price</span>
+            <span>${price}</span>
           </div>
           <div className="description">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error tempore id, molestias reiciendis enim
-              voluptatem est eaque sunt, perferendis voluptate quis recusandae explicabo,
-              quae saepe sed eum ullam! In, dicta!
+              {description}
             </p>
           </div>
           <div className="product-selection">
