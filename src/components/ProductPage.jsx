@@ -31,9 +31,9 @@ function ProductPage (props) {
           </div>
           <div className="product-selection">
             <span>size{size === '' && <span className="req-star">*</span>}</span>
-            <button className="btn" onClick={handleOnClick}>S</button>
-            <button className="btn" onClick={handleOnClick}>M</button>
-            <button className="btn" onClick={handleOnClick}>L</button>
+            <button className="btn size-btn" onClick={handleOnClick}>S</button>
+            <button className="btn size-btn" onClick={handleOnClick}>M</button>
+            <button className="btn size-btn" onClick={handleOnClick}>L</button>
           </div>
           <button className="btn add-cart" onClick={onClickHandler}>Add To Cart</button>
         </div>

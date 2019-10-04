@@ -15,14 +15,35 @@ button{
 
 .btn{
   font: $font-primary;
-  border: 1.4fr solid  $font-primary;
-  font-weight: 400;
-  .add-cart{
-    padding: 75em 0.5em;
-  }
+  border: 3px solid  $font-primary;
+  font-weight: 500;
+}
 
-  .size-btn{
-    padding: 0.5em;
+.btn.add-cart{
+  margin: 2em 0 1em 0;
+  padding: 0.75em 0.5em;
+  &:hover{
+    cursor: pointer;
+    color: orange;
+    border-color: orange;
+
+  }
+}
+
+.btn.size-btn{
+  margin: 2em 0 1em 1em;
+  size: 2em;
+  padding: 0.5em;
+  &:hover{
+    cursor: pointer;
+    color: orange;
+    border-color: orange;
+
+  }
+  &:active, &:focus{
+    cursor: pointer;
+    color: darkgoldenrod;
+    border-color: darkgoldenrod;
   }
 }
 
