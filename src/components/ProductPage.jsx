@@ -1,7 +1,12 @@
 import React from 'react'
 import Page from './Page'
 
-export default function ProductPage () {
+  const [size, setSize] = useState('')
+  const { item: { name, description, price } } = props
+  const handleOnClick = e => {
+    setSize(e.target.textContent)
+  }
+
   return (
     <Page>
       <div className="container">
@@ -21,9 +26,10 @@ export default function ProductPage () {
             </p>
           </div>
           <div className="product-selection">
-            <button className="btn">S</button>
-            <button className="btn">M</button>
-            <button className="btn">L</button>
+            <span>size{size === '' && <span className="req-star">*</span>}</span>
+            <button className="btn" onClick={handleOnClick}>S</button>
+            <button className="btn" onClick={handleOnClick}>M</button>
+            <button className="btn" onClick={handleOnClick}>L</button>
           </div>
           <button className="btn add-cart">Add To Cart</button>
         </div>
