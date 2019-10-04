@@ -5,13 +5,13 @@ import Page from './Page'
 
 function ProductPage (props) {
   const [size, setSize] = useState('')
-  const { item: { name, description, price } } = props
+  const { item: { id, name, description, price } } = props
 
   const handleOnClick = e => {
     setSize(e.target.textContent)
   }
 
-  const onClickHandler = () => props.dispatch(addCart(props.item))
+  const onClickHandler = () => props.dispatch(addCart({ id, name, price, quantity: 1, size }))
 
   return (
     <Page>

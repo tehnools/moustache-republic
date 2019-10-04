@@ -4,12 +4,21 @@ import _ from 'lodash'
 const initialState = [{
   id: 1,
   name: 'Classic Tee',
+  size: 'S',
   price: 10,
   quantity: 1
 }]
 
 const findItem = (list, comparedItem) => {
-  return !!list.find(item => _.isEqual(item, comparedItem))
+  console.log(list, comparedItem)
+  return list.find(item => {
+    console.log(item.id === comparedItem.id, item.size === comparedItem.size)
+    if (item.id === comparedItem.id && item.size === comparedItem.size) {
+      return true
+    }
+    console.log('false?')
+    return false
+  })
 }
 
 const arrToObj = (array, keyField) =>
@@ -27,11 +36,9 @@ const zip = (obj1, obj2) => {
 export default function cart (state = initialState, action) {
   switch (action.type) {
     case ADD_CART:
-      if (findItem(state, action.item.id)) {
+      if (findItem(state, action.item)) {
         return state.map(item => {
-          if (item.id === action.item.id) {
-            item.quantity += action.quantity
-          }
+          item.quantity += action.item.quantity
           return item
         })
       } else {

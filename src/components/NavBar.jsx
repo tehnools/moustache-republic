@@ -1,12 +1,14 @@
 import { connect } from 'react-redux'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import _ from 'lodash'
 import '../sass/navbar.scss'
 
 function NavBar (props) {
   const { cart } = props
+
   return (
     <div className="navbar">
-      <button>Cart({cart && cart.length})</button>
+      <button>Cart({cart && _.sumBy(cart, 'quantity')})</button>
     </div>
   )
 }
