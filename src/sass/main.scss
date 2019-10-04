@@ -1,0 +1,47 @@
+@import "colours";
+
+$break-small: 320px;
+$break-large: 1200px;
+
+img{
+  max-width: 300px;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  display: flex;
+  padding: 1.5em 1.75em;
+
+  @media screen and (min-width: $break-small){
+    width: 300px;
+  }
+
+  @media screen and (min-width: $break-large){
+    width: 960px;
+  }
+}
+
+.product-image{
+  flex-grow: 1;
+}
+
+.product-info{
+  flex-grow: 2;
+
+  .price {
+    display: flex;
+    padding: 0.5em;
+    border-top: 1px solid $border-light-grey;
+    border-bottom: 1px solid $border-light-grey;
+    justify-content: flex-start;
+
+    .span {
+      font-size: 1.2fr;
+      font-weight: 300;
+    }
+  }
+}
